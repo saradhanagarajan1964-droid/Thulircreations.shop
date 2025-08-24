@@ -1,233 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0d4e2c">
-    <title>Thulir Creations</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fffaf5;
-            color: #333;
-            line-height: 1.6;
-        }
-        header img {
-            width: 100%;
-            display: block;
-        }
-        nav {
-            text-align: center;
-            padding: 15px;
-            background-color: #0d4e2c;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 30px 20px;
-            text-align: center;
-        }
-        h2 {
-            color: #0d4e2c;
-            margin-bottom: 15px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            padding: 8px 0;
-            font-size: 18px;
-        }
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        .btn {
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn.instagram { background-color: #E4405F; }
-        .btn.phone { background-color: #28a745; }
-        .btn.email { background-color: #0073e6; }
-        footer {
-            background-color: #0d4e2c;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 14px;
-        }
-        /* We Sell Section */
-        #products {
-            padding: 30px 20px;
-            text-align: center;
-            background-color: #fffaf5;
-        }
-        #products h2 {
-            color: #0d4e2c;
-            margin-bottom: 15px;
-        }
-        #products ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 20px;
-        }
-        #products li {
-            padding: 8px 0;
-            font-size: 18px;
-        }
-        /* Buy Now Form Inside We Sell */
-        #buy-now {
-            padding: 20px;
-            background-color: #f9f9f9;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-        #buy-now h3 {
-            color: #0d4e2c;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        #buy-now form {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: left;
-        }
-        #buy-now label {
-            font-weight: bold;
-            color: #0d4e2c;
-            display: block;
-            margin-top: 10px;
-        }
-        #buy-now input,
-        #buy-now select,
-        #buy-now textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 4px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-        #buy-now button {
-            background-color: #0d4e2c;
-            color: white;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #buy-now button:hover {
-            background-color: #0a3e23;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d4e2c">
+  <title>Thulir Creations</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fffaf5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* 🔹 Splash Screen */
+    #splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0d4e2c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+    #splash img {
+      width: 200px;
+      max-width: 60%;
+      border-radius: 12px;
+    }
+    #splash.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    header img {
+      width: 100%;
+      display: block;
+    }
+    nav {
+      text-align: center;
+      padding: 15px;
+      background-color: #0d4e2c;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #0d4e2c;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 8px 0;
+      font-size: 18px;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .btn.instagram { background-color: #E4405F; }
+    .btn.phone { background-color: #28a745; }
+    .btn.email { background-color: #0073e6; }
+    footer {
+      background-color: #0d4e2c;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+    /* We Sell Section */
+    #products {
+      padding: 30px 20px;
+      text-align: center;
+      background-color: #fffaf5;
+    }
+    #products h2 {
+      color: #0d4e2c;
+      margin-bottom: 15px;
+    }
+    #products ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    #products li {
+      padding: 8px 0;
+      font-size: 18px;
+    }
+    /* Buy Now Form Inside We Sell */
+    #buy-now {
+      padding: 20px;
+      background-color: #f9f9f9;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    #buy-now h3 {
+      color: #0d4e2c;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    #buy-now form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    #buy-now label {
+      font-weight: bold;
+      color: #0d4e2c;
+      display: block;
+      margin-top: 10px;
+    }
+    #buy-now input,
+    #buy-now select,
+    #buy-now textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+    #buy-now button {
+      background-color: #0d4e2c;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #buy-now button:hover {
+      background-color: #0a3e23;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Banner / Logo -->
-    <header>
-        <img src="IMG-20250814-WA0000.jpg" alt="Thilir Creations Banner">
-    </header>
+  <!-- 🔹 Splash Screen -->
+  <div id="splash">
+    <img src="file_000000003bf861fd9b0e0ac053403ce1.png" alt="Mourish Developers Logo">
+  </div>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Our Services</a>
-        <a href="#products">We Sell</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
+  <!-- Banner / Logo -->
+  <header>
+    <img src="IMG-20250814-WA0000.jpg" alt="Thilir Creations Banner">
+  </header>
 
-    <!-- About Us -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Welcome to Thulir Creations! We specialize in organizing memorable events and offering a curated collection of ethnic wear. Our passion lies in making every celebration special and every outfit unique.</p>
-    </section>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#services">Our Services</a>
+    <a href="#products">We Sell</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
 
-    <!-- Our Services -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Baby Shower</li>
-            <li>Birthday Party</li>
-            <li>Corporate Event</li>
-        </ul>
-    </section>
+  <!-- About Us -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Thulir Creations! We specialize in organizing memorable events and offering a curated collection of ethnic wear. Our passion lies in making every celebration special and every outfit unique.</p>
+  </section>
 
-    <!-- We Sell -->
-    <section id="products">
-        <h2>We Sell</h2>
-        <ul>
-            <li>Kurtis</li>
-            <li>Sarees</li>
-            <li>Leggings</li>
-            <li>Churidars Sets</li>
-        </ul>
+  <!-- Our Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Baby Shower</li>
+      <li>Birthday Party</li>
+      <li>Corporate Event</li>
+    </ul>
+  </section>
 
-        <!-- Buy Now Order Form (no payment type) -->
-        <div id="buy-now">
-            <h3>Buy Now</h3>
-            <form action="mailto:thulircreations8@gmail.com" method="post" enctype="text/plain">
-                
-                <label>Your Name:</label>
-                <input type="text" name="Name" required>
+  <!-- We Sell -->
+  <section id="products">
+    <h2>We Sell</h2>
+    <ul>
+      <li>Kurtis</li>
+      <li>Sarees</li>
+      <li>Leggings</li>
+      <li>Churidars Sets</li>
+    </ul>
 
-                <label>Address:</label>
-                <textarea name="Address" rows="3" required></textarea>
+    <!-- Buy Now Order Form -->
+    <div id="buy-now">
+      <h3>Buy Now</h3>
+      <form action="mailto:thulircreations8@gmail.com" method="post" enctype="text/plain">
+        <label>Your Name:</label>
+        <input type="text" name="Name" required>
 
-                <label>Product Name & Details:</label>
-                <input type="text" name="Product Name" placeholder="e.g. Red Saree" required>
+        <label>Address:</label>
+        <textarea name="Address" rows="3" required></textarea>
 
-                <label>Colour:</label>
-                <input type="text" name="Colour" required>
+        <label>Product Name & Details:</label>
+        <input type="text" name="Product Name" placeholder="e.g. Red Saree" required>
 
-                <label>Type (Size/Fabric):</label>
-                <input type="text" name="Type" required>
+        <label>Colour:</label>
+        <input type="text" name="Colour" required>
 
-                <button type="submit">Submit Order</button>
-            </form>
-        </div>
-    </section>
+        <label>Type (Size/Fabric):</label>
+        <input type="text" name="Type" required>
 
-    <!-- Contact Us -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-buttons">
-            <a href="https://www.instagram.com/thulir.creations?igsh=MXZ5dHZzcG1lNThvaA==" target="_blank" class="btn instagram">Instagram</a>
-            <a href="tel:9543476310" class="btn phone">Call Us</a>
-            <a href="mailto:thulircreations8@gmail.com" class="btn email">Email Us</a>
-        </div>
-        <p>
-            Ramana Shree Garden,<br>
-            Vasanta Villa Apartment,<br>
-            B4 Block,<br>
-            Madurai - 625 011
-        </p>
-    </section>
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Thulir Creations</p>
-    </footer>
+  <!-- Contact Us -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-buttons">
+      <a href="https://www.instagram.com/thulir.creations?igsh=MXZ5dHZzcG1lNThvaA==" target="_blank" class="btn instagram">Instagram</a>
+      <a href="tel:9543476310" class="btn phone">Call Us</a>
+      <a href="mailto:thulircreations8@gmail.com" class="btn email">Email Us</a>
+    </div>
+    <p>
+      Ramana Shree Garden,<br>
+      Vasanta Villa Apartment,<br>
+      B4 Block,<br>
+      Madurai - 625 011
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Thulir Creations</p>
+  </footer>
+
+  <!-- 🔹 JS for Splash -->
+  <script>
+    window.addEventListener("load", () => {
+      const splash = document.getElementById("splash");
+      setTimeout(() => {
+        splash.classList.add("fade-out");
+        setTimeout(() => splash.style.display = "none", 1000);
+      }, 2000); // Show splash for 2 seconds
+    });
+  </script>
 
 </body>
-</html>
+    </html>
