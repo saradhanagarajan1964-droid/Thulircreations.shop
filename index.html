@@ -13,7 +13,6 @@
       color: #333;
       line-height: 1.6;
     }
-
     /* 🔹 Splash Screen */
     #splash {
       position: fixed;
@@ -26,16 +25,18 @@
       z-index: 9999;
       transition: opacity 1s ease;
     }
+    /* White logo splash style */
     #splash img {
       width: 200px;
       max-width: 60%;
       border-radius: 12px;
+      filter: brightness(0) invert(1); /* makes logo white if it's black PNG */
+      box-shadow: 0 6px 30px rgba(0,0,0,0.15);
     }
     #splash.fade-out {
       opacity: 0;
       pointer-events: none;
     }
-
     header img {
       width: 100%;
       display: block;
@@ -69,6 +70,10 @@
     li {
       padding: 8px 0;
       font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
     }
     .contact-buttons {
       display: flex;
@@ -112,6 +117,11 @@
     #products li {
       padding: 8px 0;
       font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 15px;
+      text-align: left;
     }
     /* Buy Now Form Inside We Sell */
     #buy-now {
@@ -169,12 +179,12 @@
 
   <!-- 🔹 Splash Screen -->
   <div id="splash">
-    <img src="file_000000003bf861fd9b0e0ac053403ce1.png" alt="Mourish Developers Logo">
+    <img src="/file_000000003bf861fd9b0e0ac053403ce1.png" alt="Thulir Creations White Logo">
   </div>
 
   <!-- Banner / Logo -->
   <header>
-    <img src="IMG-20250814-WA0000.jpg" alt="Thilir Creations Banner">
+    <img src="/Screenshot_20250814_184515_WhatsApp.jpg" alt="Thulir Creations Banner">
   </header>
 
   <!-- Navigation -->
@@ -205,34 +215,63 @@
   <section id="products">
     <h2>We Sell</h2>
     <ul>
-      <li>Kurtis</li>
-      <li>Sarees</li>
-      <li>Leggings</li>
-      <li>Churidars Sets</li>
+      <li>●Churidars Sets</li>
+      <li>●Kurtis</li>
+      <li>●Sarees</li>
+      <li>●Leggings</li>
     </ul>
-
+    
     <!-- Buy Now Order Form -->
-    <div id="buy-now">
-      <h3>Buy Now</h3>
-      <form action="mailto:thulircreations8@gmail.com" method="post" enctype="text/plain">
-        <label>Your Name:</label>
-        <input type="text" name="Name" required>
+<div id="buy-now">
+  <h3>Buy Now</h3>
+  <form action="mailto:thulircreations8@gmail.com" method="post" enctype="text/plain">
+    <label>Your Name:</label>
+    <input type="text" name="Name" required>
 
-        <label>Address:</label>
-        <textarea name="Address" rows="3" required></textarea>
+    <label>Address:</label>
+    <textarea name="Address" rows="6" required></textarea>
 
-        <label>Product Name & Details:</label>
-        <input type="text" name="Product Name" placeholder="e.g. Red Saree" required>
+    <label>Product Name & Details:</label>
+    <select name="Product Name" required>
+      <option value="">Select</option>
+      <option value="Saree">Saree</option>
+      <option value="Leggings">Leggings</option>
+      <option value="Kurtis">Kurtis</option>
+      <option value="Churidars Set">Churidars Set</option>
+    </select>
+    
+    <label>Type:</label>
+    <input type="text" name="Type" placeholder="Type (e.g., Ankle leggings,etc..)" required />
 
-        <label>Colour:</label>
-        <input type="text" name="Colour" required>
+    <label>Type of material:</label>
+    <input type="text" name="Type of materiel" placeholder="Type (e.g., Silk, Cotton)" required />
 
-        <label>Type (Size/Fabric):</label>
-        <input type="text" name="Type" required>
+    <label>Colour:</label>
+    <select name="Colour" required>
+      <option value="">Select</option>
+      <option value="Red">Red</option>
+      <option value="Yellow">Yellow</option>
+      <option value="Orange">Orange</option>
+      <option value="Green">Green</option>
+      <option value="Pink">Pink</option>
+      <option value="Purple">Purple</option>
+      <option value="other">other</option>
+    </select>
 
-        <button type="submit">Submit Order</button>
-      </form>
-    </div>
+    <label>Size eg: XL, L:</label>
+    <input type="text" name="Size" placeholder="e.g. XL, L" required>
+    
+    <label>Phone:</label>
+    <input type="tel" name="phone no" placeholder="eg: +91 12345 67890" required>
+    
+    <label>email:</label>
+    <input type="email" name="email" placeholder="eg: youremail@yourservice.com" required>
+    
+
+    <button type="submit">Submit Order</button>
+  </form>
+</div>
+
   </section>
 
   <!-- Contact Us -->
@@ -266,6 +305,5 @@
       }, 2000); // Show splash for 2 seconds
     });
   </script>
-
 </body>
-    </html>
+</html>
