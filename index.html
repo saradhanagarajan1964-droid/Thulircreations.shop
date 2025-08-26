@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0d4e2c">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d4e2c" />
   <title>Thulir Creations</title>
   <style>
     body {
@@ -30,7 +30,7 @@
       width: 200px;
       max-width: 60%;
       border-radius: 12px;
-      filter: brightness(0) invert(1); /* makes logo white if it's black PNG */
+      filter: brightness(0) invert(1);
       box-shadow: 0 6px 30px rgba(0,0,0,0.15);
     }
     #splash.fade-out {
@@ -67,43 +67,14 @@
       list-style: none;
       padding: 0;
     }
-    li {
-      padding: 8px 0;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-    }
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 10px 20px;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    .btn.instagram { background-color: #E4405F; }
-    .btn.phone { background-color: #28a745; }
-    .btn.email { background-color: #0073e6; }
-    footer {
-      background-color: #0d4e2c;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-    }
-    /* We Sell Section */
+    /* Center We Sell section content */
     #products {
       padding: 30px 20px;
-      text-align: center;
       background-color: #fffaf5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     #products h2 {
       color: #0d4e2c;
@@ -113,22 +84,24 @@
       list-style: none;
       padding: 0;
       margin-bottom: 20px;
+      text-align: center;
+      display: inline-block;
     }
     #products li {
       padding: 8px 0;
       font-size: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 15px;
-      text-align: left;
+      display: block;
+      text-align: center;
     }
-    /* Buy Now Form Inside We Sell */
+    /* Buy Now Form */
     #buy-now {
+      width: 100%;
+      max-width: 500px;
       padding: 20px;
       background-color: #f9f9f9;
-      margin-top: 20px;
       border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 0 auto;
     }
     #buy-now h3 {
       color: #0d4e2c;
@@ -136,12 +109,6 @@
       text-align: center;
     }
     #buy-now form {
-      max-width: 500px;
-      margin: 0 auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: left;
     }
     #buy-now label {
@@ -173,18 +140,42 @@
     #buy-now button:hover {
       background-color: #0a3e23;
     }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .btn.instagram { background-color: #E4405F; }
+    .btn.phone { background-color: #28a745; }
+    .btn.email { background-color: #0073e6; }
+    footer {
+      background-color: #0d4e2c;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
   <!-- 🔹 Splash Screen -->
   <div id="splash">
-    <img src="/file_000000003bf861fd9b0e0ac053403ce1.png" alt="Thulir Creations White Logo">
+    <img src="file_000000003bf861fd9b0e0ac053403ce1.png" alt="Mourish Developers">
   </div>
 
   <!-- Banner / Logo -->
   <header>
-    <img src="/Screenshot_20250814_184515_WhatsApp.jpg" alt="Thulir Creations Banner">
+    <img src="IMG-20250814-WA0000.jpg" alt="Thulir Creations Banner">
   </header>
 
   <!-- Navigation -->
@@ -222,56 +213,54 @@
     </ul>
     
     <!-- Buy Now Order Form -->
-<div id="buy-now">
-  <h3>Buy Now</h3>
-  <form action="mailto:thulircreations8@gmail.com" method="post" enctype="text/plain">
-    <label>Your Name:</label>
-    <input type="text" name="Name" required>
+    <div id="buy-now">
+      <h3>Buy Now</h3>
+      <form action="mailto:thulircreations8@gmail.com" method="post" enctype="text/plain">
+        <label>Your Name:</label>
+        <input type="text" name="Name" required />
 
-    <label>Address:</label>
-    <textarea name="Address" rows="6" required></textarea>
+        <label>Address:</label>
+        <textarea name="Address" rows="6" required></textarea>
 
-    <label>Product Name & Details:</label>
-    <select name="Product Name" required>
-      <option value="">Select</option>
-      <option value="Saree">Saree</option>
-      <option value="Leggings">Leggings</option>
-      <option value="Kurtis">Kurtis</option>
-      <option value="Churidars Set">Churidars Set</option>
-    </select>
-    
-    <label>Type:</label>
-    <input type="text" name="Type" placeholder="Type (e.g., Ankle leggings,etc..)" required />
+        <label>Product Name & Details:</label>
+        <select name="Product Name" required>
+          <option value="">Select</option>
+          <option value="Saree">Saree</option>
+          <option value="Leggings">Leggings</option>
+          <option value="Kurtis">Kurtis</option>
+          <option value="Churidars Set">Churidars Set</option>
+        </select>
 
-    <label>Type of material:</label>
-    <input type="text" name="Type of materiel" placeholder="Type (e.g., Silk, Cotton)" required />
+        <label>Type:</label>
+        <input type="text" name="Type" placeholder="Type (e.g., Ankle leggings, etc.)" required />
 
-    <label>Colour:</label>
-    <select name="Colour" required>
-      <option value="">Select</option>
-      <option value="Red">Red</option>
-      <option value="Yellow">Yellow</option>
-      <option value="Orange">Orange</option>
-      <option value="Green">Green</option>
-      <option value="Pink">Pink</option>
-      <option value="Purple">Purple</option>
-      <option value="other">other</option>
-    </select>
+        <label>Type of material:</label>
+        <input type="text" name="Type of material" placeholder="Type (e.g., Silk, Cotton)" required />
 
-    <label>Size eg: XL, L:</label>
-    <input type="text" name="Size" placeholder="e.g. XL, L" required>
-    
-    <label>Phone:</label>
-    <input type="tel" name="phone no" placeholder="eg: +91 12345 67890" required>
-    
-    <label>email:</label>
-    <input type="email" name="email" placeholder="eg: youremail@yourservice.com" required>
-    
+        <label>Colour:</label>
+        <select name="Colour" required>
+          <option value="">Select</option>
+          <option value="Red">Red</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Orange">Orange</option>
+          <option value="Green">Green</option>
+          <option value="Pink">Pink</option>
+          <option value="Purple">Purple</option>
+          <option value="Other">Other</option>
+        </select>
 
-    <button type="submit">Submit Order</button>
-  </form>
-</div>
+        <label>Size eg: XL, L:</label>
+        <input type="text" name="Size" placeholder="e.g. XL, L" required />
 
+        <label>Phone:</label>
+        <input type="tel" name="Phone" placeholder="eg: +91 12345 67890" required />
+
+        <label>Email:</label>
+        <input type="email" name="Email" placeholder="eg: youremail@yourservice.com" required />
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
   </section>
 
   <!-- Contact Us -->
@@ -283,9 +272,9 @@
       <a href="mailto:thulircreations8@gmail.com" class="btn email">Email Us</a>
     </div>
     <p>
-      Ramana Shree Garden,<br>
-      Vasanta Villa Apartment,<br>
-      B4 Block,<br>
+      Ramana Shree Garden,<br />
+      Vasanta Villa Apartment,<br />
+      B4 Block,<br />
       Madurai - 625 011
     </p>
   </section>
@@ -301,7 +290,7 @@
       const splash = document.getElementById("splash");
       setTimeout(() => {
         splash.classList.add("fade-out");
-        setTimeout(() => splash.style.display = "none", 1000);
+        setTimeout(() => (splash.style.display = "none"), 1000);
       }, 2000); // Show splash for 2 seconds
     });
   </script>
